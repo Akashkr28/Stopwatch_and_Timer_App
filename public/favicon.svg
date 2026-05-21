@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- App background gradient (matches --bg light) -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dce8f4"/>
+      <stop offset="100%" stop-color="#c8ddf0"/>
+    </linearGradient>
+
+    <!-- Body gradient — accent blue -->
+    <linearGradient id="bodyGrad" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#90bce8"/>
+      <stop offset="100%" stop-color="#5a8ec2"/>
+    </linearGradient>
+
+    <!-- Clock face radial gradient (light centre → soft edge) -->
+    <radialGradient id="faceGrad" cx="40%" cy="36%" r="60%">
+      <stop offset="0%"   stop-color="#f4f9ff"/>
+      <stop offset="100%" stop-color="#dce8f4"/>
+    </radialGradient>
+
+    <!-- Neumorphic inset shadow on the face -->
+    <filter id="insetShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feFlood flood-color="rgba(168,193,220,0.7)" result="dark"/>
+      <feComposite in="dark" in2="SourceGraphic" operator="in" result="darkIn"/>
+      <feOffset in="darkIn" dx="6" dy="6"/>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+
+    <!-- Glow on needle tip -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- ── App icon rounded-square background ── -->
+  <rect width="512" height="512" rx="115" fill="url(#bgGrad)"/>
+
+  <!-- ── Neumorphic light highlight (top-left) ── -->
+  <rect width="512" height="512" rx="115"
+    fill="none"
+    stroke="rgba(255,255,255,0.7)"
+    stroke-width="18"
+    stroke-dasharray="600 9999"
+    stroke-dashoffset="-30"/>
+
+  <!-- ══════════════════════════════
+       STOPWATCH BODY
+  ══════════════════════════════ -->
+
+  <!-- Crown stem -->
+  <rect x="226" y="56" width="60" height="56" rx="16"
+    fill="url(#bodyGrad)"/>
+
+  <!-- Crown top button -->
+  <rect x="214" y="42" width="84" height="36" rx="18"
+    fill="#6b9fd4"/>
+  <rect x="220" y="45" width="72" height="20" rx="10"
+    fill="rgba(255,255,255,0.3)"/>
+
+  <!-- Left ear / lug -->
+  <ellipse cx="154" cy="182" rx="34" ry="18"
+    fill="url(#bodyGrad)"
+    transform="rotate(-42 154 182)"/>
+
+  <!-- Right ear / lug -->
+  <ellipse cx="358" cy="182" rx="34" ry="18"
+    fill="url(#bodyGrad)"
+    transform="rotate(42 358 182)"/>
+
+  <!-- ── Neumorphic raised body — dark shadow (bottom-right) ── -->
+  <circle cx="260" cy="306" r="196" fill="rgba(90,130,175,0.28)"/>
+
+  <!-- ── Neumorphic raised body — light highlight (top-left) ── -->
+  <circle cx="252" cy="294" r="196" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- ── Main body fill ── -->
+  <circle cx="256" cy="300" r="194" fill="url(#bodyGrad)"/>
+
+  <!-- ── Bezel ring ── -->
+  <circle cx="256" cy="300" r="194"
+    fill="none"
+    stroke="rgba(255,255,255,0.22)"
+    stroke-width="10"/>
+
+  <!-- ══════════════════════════════
+       CLOCK FACE
+  ══════════════════════════════ -->
+
+  <!-- Face shadow (inset dark — bottom-right) -->
+  <circle cx="262" cy="306" r="158" fill="rgba(90,130,175,0.25)"/>
+
+  <!-- Face highlight (inset light — top-left) -->
+  <circle cx="250" cy="294" r="158" fill="rgba(255,255,255,0.40)"/>
+
+  <!-- Face fill -->
+  <circle cx="256" cy="300" r="155" fill="url(#faceGrad)"/>
+
+  <!-- ══════════════════════════════
+       TICK MARKS  (12 positions)
+  ══════════════════════════════ -->
+  <!-- cx=256, cy=300, face r=155, outer tick r=148, minor inner=140, major inner=132 -->
+
+  <!-- 12 o'clock  (major) -->
+  <line x1="256" y1="152" x2="256" y2="168"
+    stroke="#6b9fd4" stroke-width="12" stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- 1 o'clock (minor) — angle 30° -->
+  <line x1="330" y1="170" x2="323" y2="182"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- 2 o'clock (minor) — angle 60° -->
+  <line x1="387" y1="222" x2="377" y2="230"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- 3 o'clock  (major) -->
+  <line x1="404" y1="300" x2="388" y2="300"
+    stroke="#6b9fd4" stroke-width="12" stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- 4 o'clock (minor) — angle 120° -->
+  <line x1="387" y1="378" x2="377" y2="370"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- 5 o'clock (minor) — angle 150° -->
+  <line x1="330" y1="430" x2="323" y2="418"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- 6 o'clock  (major) -->
+  <line x1="256" y1="448" x2="256" y2="432"
+    stroke="#6b9fd4" stroke-width="12" stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- 7 o'clock (minor) — angle 210° -->
+  <line x1="182" y1="430" x2="189" y2="418"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- 8 o'clock (minor) — angle 240° -->
+  <line x1="125" y1="378" x2="135" y2="370"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- 9 o'clock  (major) -->
+  <line x1="108" y1="300" x2="124" y2="300"
+    stroke="#6b9fd4" stroke-width="12" stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- 10 o'clock (minor) — angle 300° -->
+  <line x1="125" y1="222" x2="135" y2="230"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- 11 o'clock (minor) — angle 330° -->
+  <line x1="182" y1="170" x2="189" y2="182"
+    stroke="#6b9fd4" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- ══════════════════════════════
+       CLOCK HANDS  (showing ~10:10)
+  ══════════════════════════════ -->
+
+  <!-- Minute hand — pointing to 2 o'clock (angle 60° from 12) -->
+  <!-- end: 256+115*sin60=256+99.6=356, 300-115*cos60=300-57.5=242 -->
+  <line x1="256" y1="300" x2="352" y2="244"
+    stroke="rgba(107,159,212,0.65)" stroke-width="11"
+    stroke-linecap="round"/>
+
+  <!-- Hour hand — pointing to 10 o'clock (angle 300° from 12) -->
+  <!-- end: 256+85*sin300=256-73.6=182, 300-85*cos300=300-42.5=257 -->
+  <line x1="256" y1="300" x2="186" y2="258"
+    stroke="#4a6a8a" stroke-width="16"
+    stroke-linecap="round"/>
+
+  <!-- Second hand tail -->
+  <line x1="256" y1="300" x2="256" y2="338"
+    stroke="#6b9fd4" stroke-width="7"
+    stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- Second hand (pointing to 12 o'clock) -->
+  <line x1="256" y1="300" x2="256" y2="186"
+    stroke="#6b9fd4" stroke-width="7"
+    stroke-linecap="round"/>
+
+  <!-- ── Centre pivot ── -->
+  <circle cx="256" cy="300" r="18" fill="#6b9fd4"/>
+  <circle cx="256" cy="300" r="10" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="256" cy="300" r="5"  fill="#6b9fd4"/>
+</svg>
