@@ -4,29 +4,6 @@ A polished, neumorphic-design time-tracking app built with React 19 and Vite. Fe
 
 ---
 
-## Preview
-
-### Light Mode
-
-| Stopwatch | Timer |
-|-----------|-------|
-| ![Stopwatch light mode — neumorphic analog clock face with digital display and lap controls](src/assets/previews/stopwatch-light.png) | ![Timer light mode — countdown ring, H/M/S inputs, preset pills](src/assets/previews/timer-light.png) |
-
-### Dark Mode
-
-| Stopwatch | Timer |
-|-----------|-------|
-| ![Stopwatch dark mode](src/assets/previews/stopwatch-dark.png) | ![Timer dark mode](src/assets/previews/timer-dark.png) |
-
-### Loading Screen & Lap List
-
-| Splash Screen | Lap Tracking |
-|---------------|--------------|
-| ![Neumorphic loading screen with spinning clock needle and pulsing dots](src/assets/previews/splash.png) | ![Stopwatch with scrollable lap list — best lap in green, worst in red](src/assets/previews/laps.png) |
-
-> **To add screenshots:** run the app, take a screenshot for each view, and save them into `src/assets/previews/` using the filenames above.
-
----
 
 ## Features
 
