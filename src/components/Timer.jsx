@@ -84,10 +84,11 @@ export default function Timer() {
 
       {/* ── Ring display ── */}
       <div className="timer-ring-wrap">
-        <div className="neu-inset" style={{
-          width: SIZE, height: SIZE, borderRadius: '50%', position: 'relative',
+        <div className="neu-inset timer-ring-container" style={{
+          borderRadius: '50%', position: 'relative',
         }}>
-          <svg width={SIZE} height={SIZE} style={{ transform: 'rotate(-90deg)', position: 'absolute', inset: 0 }}>
+          <svg viewBox={`0 0 ${SIZE} ${SIZE}`} width="100%" height="100%"
+            style={{ transform: 'rotate(-90deg)', position: 'absolute', inset: 0 }}>
             {/* Track */}
             <circle cx={CX} cy={CX} r={R}
               fill="none"

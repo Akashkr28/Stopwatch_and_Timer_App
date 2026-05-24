@@ -517,3 +517,83 @@ body {
 ::-webkit-scrollbar       { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--sd); border-radius: 2px; }
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — fluid sizing across all screens
+───────────────────────────────────────── */
+
+/* ── Fluid clock & ring ── */
+.clock-face {
+  width: min(260px, 72vw);
+  height: min(260px, 72vw);
+}
+
+/* Timer ring wrapper gets its own class for CSS control */
+.timer-ring-container {
+  width: min(268px, 76vw);
+  height: min(268px, 76vw);
+}
+
+/* ── Fluid typography ── */
+.digital-main  { font-size: clamp(26px, 10vw,  42px); }
+.digital-cs    { font-size: clamp(13px,  5vw,  22px); }
+.timer-digits  { font-size: clamp(26px, 10vw,  42px); }
+.page-title    { font-size: clamp(20px,  7vw,  28px); }
+
+/* ── Fluid horizontal padding ── */
+.app { padding: 0 clamp(14px, 5vw, 24px); }
+
+/* ── Very small phones  (< 360 px) ── */
+@media (max-width: 359px) {
+  .clock-face            { width: 200px; height: 200px; }
+  .timer-ring-container  { width: 210px; height: 210px; }
+  .top-bar               { padding: 28px 0 6px; }
+  .clock-wrap            { margin: 12px 0 4px; }
+  .digital-display       { margin: 10px 0 14px; }
+  .controls              { margin-bottom: 14px; gap: 10px; }
+  .neu-btn               { height: 46px; font-size: 13px; }
+  .time-input            { width: 60px; height: 48px; font-size: 18px; }
+  .preset-row            { margin: 10px 0 14px; }
+  .input-section         { gap: 10px; margin-bottom: 18px; }
+}
+
+/* ── Landscape mobile (viewport height ≤ 500 px) ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root { --nav-h: 56px; }
+
+  .clock-face           { width: min(160px, 36vh); height: min(160px, 36vh); }
+  .timer-ring-container { width: min(170px, 38vh); height: min(170px, 38vh); }
+
+  .top-bar          { padding: 10px 0 2px; }
+  .clock-wrap       { margin: 6px 0 2px; }
+  .digital-display  { margin: 6px 0 10px; }
+  .digital-main     { font-size: clamp(18px, 6vw, 28px); }
+  .digital-cs       { font-size: clamp(11px, 3.5vw, 16px); }
+  .timer-digits     { font-size: clamp(18px, 6vw, 28px); }
+
+  .controls         { margin-bottom: 8px; gap: 10px; }
+  .neu-btn          { height: 42px; font-size: 13px; }
+
+  .bottom-nav  { border-radius: 18px 18px 0 0; padding: 0 8px 2px; }
+  .nav-btn     { width: 42px; height: 42px; font-size: 20px; }
+
+  .preset-row        { margin: 6px 0 10px; }
+  .input-section     { margin-bottom: 10px; gap: 8px; }
+  .set-btn           { height: 40px; }
+  .time-input        { height: 46px; }
+}
+
+/* ── Tablet portrait (768 px – 1023 px) — wider card ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #root {
+    max-width: 460px;
+    height: min(860px, 95svh);
+  }
+  .clock-face           { width: 270px; height: 270px; }
+  .timer-ring-container { width: 278px; height: 278px; }
+}
+
+/* ── Desktop / large tablet (≥ 1024 px) ── */
+@media (min-width: 1024px) {
+  #root { max-width: 420px; }
+}

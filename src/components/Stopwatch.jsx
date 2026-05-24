@@ -27,7 +27,7 @@ export default function Stopwatch() {
         {/* Analog clock face */}
         <div className="clock-wrap">
           <div className="clock-face neu-inset" style={{ position: 'relative' }}>
-            <svg viewBox="0 0 260 260" width="260" height="260"
+            <svg viewBox="0 0 260 260" width="100%" height="100%"
               style={{ position: 'absolute', inset: 0 }}>
               {Array.from({ length: 60 }).map((_, i) => {
                 const major  = i % 5 === 0;
